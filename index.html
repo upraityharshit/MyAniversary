@@ -47,9 +47,9 @@
         /* Floating hearts */
         .heart {
             position: fixed;
-            color: red;
+            color: rgb(143, 124, 255);
             font-size: 20px;
-            animation: floatUp 6s linear infinite;
+            animation: floatUp 1s linear infinite;
         }
 
         @keyframes floatUp {
@@ -149,10 +149,12 @@
         heart.innerHTML = "❤️";
         heart.style.left = Math.random() * 100 + "vw";
         heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        heart.style.backgroundColor =
+            ["#ff4d6d", "#ff85a2", "#ff758f"][Math.floor(Math.random()*3)];
         document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 6000);
+        setTimeout(() => heart.remove(), 10000);
     }
-    setInterval(createHeart, 300);
+    setInterval(createHeart, 1000);
 
     // Balloons
     function createBalloon() {
@@ -164,7 +166,7 @@
         document.body.appendChild(balloon);
         setTimeout(() => balloon.remove(), 10000);
     }
-    setInterval(createBalloon, 2000);
+    setInterval(createBalloon, 1000);
 </script>
 
 </body>
